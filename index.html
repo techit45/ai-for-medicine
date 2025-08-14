@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login-Learning | AI for Medicine - ตัวอย่างการใช้ปัญญาประดิษฐ์ในการแพทย์</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-graduation-cap"></i>
+                <span>Login-Learning</span>
+            </div>
+            <div class="nav-menu">
+                <a href="#home" class="nav-link">หน้าแรก</a>
+                <a href="#applications" class="nav-link">การประยุกต์ใช้</a>
+                <a href="#demos" class="nav-link">ทดลองใช้</a>
+                <a href="#apis" class="nav-link">API Resources</a>
+                <a href="#education" class="nav-link">การศึกษา</a>
+            </div>
+            <div class="nav-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1 class="hero-title">ปัญญาประดิษฐ์ในการแพทย์</h1>
+                <p class="hero-subtitle">สำรวจการใช้ AI เพื่อพัฒนาการดูแลสุขภาพและการรักษาพยาบาล</p>
+                <div class="hero-buttons">
+                    <button class="btn-primary" onclick="scrollToSection('demos')">
+                        <i class="fas fa-play"></i> ทดลองใช้
+                    </button>
+                    <button class="btn-secondary" onclick="scrollToSection('applications')">
+                        <i class="fas fa-info-circle"></i> เรียนรู้เพิ่มเติม
+                    </button>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="medical-animation">
+                    <div class="pulse-circle"></div>
+                    <div class="dna-helix">
+                        <i class="fas fa-dna"></i>
+                    </div>
+                    <div class="brain-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <div class="heartbeat">
+                        <i class="fas fa-heartbeat"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Statistics Section -->
+    <section class="statistics">
+        <div class="stats-container">
+            <div class="stat-item">
+                <div class="stat-number" data-target="696">0</div>
+                <div class="stat-label">พันล้านดอลลาร์<br>ตลาด AI Healthcare 2034</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number" data-target="950">0</div>
+                <div class="stat-label">อุปกรณ์การแพทย์ AI<br>ที่ FDA อนุมัติ</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number" data-target="95">0</div>
+                <div class="stat-label">เปอร์เซ็นต์ความแม่นยำ<br>การตรวจจับปอด</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number" data-target="60">0</div>
+                <div class="stat-label">เปอร์เซ็นต์ลดเวลา<br>การวินิจฉัยฉุกเฉิน</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Applications Section -->
+    <section id="applications" class="applications">
+        <div class="container">
+            <h2 class="section-title">การประยุกต์ใช้ AI ในการแพทย์</h2>
+            <p class="section-subtitle">ค้นพบวิธีที่ปัญญาประดิษฐ์กำลังเปลี่ยนแปลงวงการแพทย์</p>
+            
+            <div class="applications-grid">
+                <!-- Medical Imaging -->
+                <div class="app-card" data-category="imaging">
+                    <div class="app-icon">
+                        <i class="fas fa-x-ray"></i>
+                    </div>
+                    <h3>การถ่ายภาพทางการแพทย์</h3>
+                    <p>AI ช่วยวิเคราะห์ภาพ X-ray, CT, MRI ด้วยความแม่นยำสูงกว่า 95%</p>
+                    <div class="app-features">
+                        <span class="feature-tag">CT Scan Analysis</span>
+                        <span class="feature-tag">MRI Detection</span>
+                        <span class="feature-tag">X-ray Diagnosis</span>
+                    </div>
+                    <button class="app-demo-btn" onclick="openDemo('imaging')">ดูตัวอย่าง</button>
+                </div>
+
+                <!-- Drug Discovery -->
+                <div class="app-card" data-category="drug">
+                    <div class="app-icon">
+                        <i class="fas fa-pills"></i>
+                    </div>
+                    <h3>การค้นพบยาใหม่</h3>
+                    <p>ใช้ AI เพื่อเร่งการพัฒนายาและลดเวลาการวิจัยจาก 10-15 ปี เหลือ 3-5 ปี</p>
+                    <div class="app-features">
+                        <span class="feature-tag">Molecular Design</span>
+                        <span class="feature-tag">Clinical Trials</span>
+                        <span class="feature-tag">Drug Interaction</span>
+                    </div>
+                    <button class="app-demo-btn" onclick="openDemo('drug')">ดูตัวอย่าง</button>
+                </div>
+
+                <!-- Robotic Surgery -->
+                <div class="app-card" data-category="surgery">
+                    <div class="app-icon">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <h3>การผ่าตัดด้วยหุ่นยนต์</h3>
+                    <p>ระบบ AI ช่วยแพทย์ผ่าตัดด้วยความแม่นยำสูง ลดภาวะแทรกซ้อน 35%</p>
+                    <div class="app-features">
+                        <span class="feature-tag">Da Vinci System</span>
+                        <span class="feature-tag">Precision Surgery</span>
+                        <span class="feature-tag">Minimal Invasive</span>
+                    </div>
+                    <button class="app-demo-btn" onclick="openDemo('surgery')">ดูตัวอย่าง</button>
+                </div>
+
+                <!-- Personalized Medicine -->
+                <div class="app-card" data-category="personalized">
+                    <div class="app-icon">
+                        <i class="fas fa-user-md"></i>
+                    </div>
+                    <h3>การแพทย์เฉพาะบุคคล</h3>
+                    <p>วิเคราะห์ข้อมูลพันธุกรรมเพื่อกำหนดแผนการรักษาที่เหมาะสมกับแต่ละบุคคล</p>
+                    <div class="app-features">
+                        <span class="feature-tag">Genomic Analysis</span>
+                        <span class="feature-tag">Risk Prediction</span>
+                        <span class="feature-tag">Custom Treatment</span>
+                    </div>
+                    <button class="app-demo-btn" onclick="openDemo('personalized')">ดูตัวอย่าง</button>
+                </div>
+
+                <!-- Telemedicine -->
+                <div class="app-card" data-category="telemedicine">
+                    <div class="app-icon">
+                        <i class="fas fa-laptop-medical"></i>
+                    </div>
+                    <h3>การแพทย์ทางไกล</h3>
+                    <p>AI Chatbots และ Virtual Assistants ให้คำปรึกษาสุขภาพเบื้องต้น 24/7</p>
+                    <div class="app-features">
+                        <span class="feature-tag">AI Chatbots</span>
+                        <span class="feature-tag">Remote Monitoring</span>
+                        <span class="feature-tag">Virtual Consultation</span>
+                    </div>
+                    <button class="app-demo-btn" onclick="openDemo('telemedicine')">ดูตัวอย่าง</button>
+                </div>
+
+                <!-- Predictive Analytics -->
+                <div class="app-card" data-category="predictive">
+                    <div class="app-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>การพยากรณ์โรค</h3>
+                    <p>ใช้ Machine Learning วิเคราะห์ข้อมูลเพื่อพยากรณ์ความเสี่ยงโรคล่วงหน้า</p>
+                    <div class="app-features">
+                        <span class="feature-tag">Risk Assessment</span>
+                        <span class="feature-tag">Early Detection</span>
+                        <span class="feature-tag">Prevention Plans</span>
+                    </div>
+                    <button class="app-demo-btn" onclick="openDemo('predictive')">ดูตัวอย่าง</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Demos Section -->
+    <section id="demos" class="demos">
+        <div class="container">
+            <h2 class="section-title">ทดลองใช้ระบบ AI ทางการแพทย์</h2>
+            <p class="section-subtitle">สัมผัสประสบการณ์การใช้งาน AI ในการแพทย์ด้วยตัวคุณเอง</p>
+            
+            <div class="demo-tabs">
+                <button class="tab-btn active" data-tab="symptom-checker">ตรวจสอบอาการ</button>
+                <button class="tab-btn" data-tab="bmi-calculator">คำนวณ BMI</button>
+                <button class="tab-btn" data-tab="heart-rate">วิเคราะห์หัวใจ</button>
+                <button class="tab-btn" data-tab="drug-info">ข้อมูลยา</button>
+            </div>
+
+            <!-- Symptom Checker Demo -->
+            <div id="symptom-checker" class="demo-content active">
+                <div class="demo-card">
+                    <div class="demo-header">
+                        <i class="fas fa-user-injured"></i>
+                        <h3>ระบบตรวจสอบอาการเบื้องต้น</h3>
+                    </div>
+                    <div class="demo-body">
+                        <div class="input-group">
+                            <label>เลือกอาการของคุณ:</label>
+                            <div class="symptom-checkboxes">
+                                <label class="checkbox-item">
+                                    <input type="checkbox" value="ไข้"> ไข้
+                                </label>
+                                <label class="checkbox-item">
+                                    <input type="checkbox" value="ไอ"> ไอ
+                                </label>
+                                <label class="checkbox-item">
+                                    <input type="checkbox" value="น้ำมูกไหล"> น้ำมูกไหล
+                                </label>
+                                <label class="checkbox-item">
+                                    <input type="checkbox" value="เจ็บคอ"> เจ็บคอ
+                                </label>
+                                <label class="checkbox-item">
+                                    <input type="checkbox" value="ปวดศีรษะ"> ปวดศีรษะ
+                                </label>
+                                <label class="checkbox-item">
+                                    <input type="checkbox" value="ปวดกล้ามเนื้อ"> ปวดกล้ามเนื้อ
+                                </label>
+                            </div>
+                        </div>
+                        <button class="demo-btn" onclick="checkSymptoms()">
+                            <i class="fas fa-search"></i> ตรวจสอบอาการ
+                        </button>
+                        <div id="symptom-result" class="demo-result"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- BMI Calculator Demo -->
+            <div id="bmi-calculator" class="demo-content">
+                <div class="demo-card">
+                    <div class="demo-header">
+                        <i class="fas fa-weight"></i>
+                        <h3>เครื่องคำนวณดัชนีมวลกาย (BMI)</h3>
+                    </div>
+                    <div class="demo-body">
+                        <div class="input-row">
+                            <div class="input-group">
+                                <label for="weight">น้ำหนัก (กก.)</label>
+                                <input type="number" id="weight" placeholder="เช่น 65">
+                            </div>
+                            <div class="input-group">
+                                <label for="height">ส่วนสูง (ซม.)</label>
+                                <input type="number" id="height" placeholder="เช่น 170">
+                            </div>
+                        </div>
+                        <button class="demo-btn" onclick="calculateBMI()">
+                            <i class="fas fa-calculator"></i> คำนวณ BMI
+                        </button>
+                        <div id="bmi-result" class="demo-result"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Heart Rate Analyzer Demo -->
+            <div id="heart-rate" class="demo-content">
+                <div class="demo-card">
+                    <div class="demo-header">
+                        <i class="fas fa-heartbeat"></i>
+                        <h3>เครื่องวิเคราะห์อัตราการเต้นหัวใจ</h3>
+                    </div>
+                    <div class="demo-body">
+                        <div class="input-row">
+                            <div class="input-group">
+                                <label for="heart-rate-input">อัตราการเต้นหัวใจ (ครั้ง/นาที)</label>
+                                <input type="number" id="heart-rate-input" placeholder="เช่น 75">
+                            </div>
+                            <div class="input-group">
+                                <label for="age-input">อายุ (ปี)</label>
+                                <input type="number" id="age-input" placeholder="เช่น 25">
+                            </div>
+                        </div>
+                        <button class="demo-btn" onclick="analyzeHeartRate()">
+                            <i class="fas fa-chart-pulse"></i> วิเคราะห์
+                        </button>
+                        <div id="heart-rate-result" class="demo-result"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Drug Information Demo -->
+            <div id="drug-info" class="demo-content">
+                <div class="demo-card">
+                    <div class="demo-header">
+                        <i class="fas fa-capsules"></i>
+                        <h3>ค้นหาข้อมูลยา (Demo OpenFDA API)</h3>
+                    </div>
+                    <div class="demo-body">
+                        <div class="input-group">
+                            <label for="drug-name">ชื่อยา (ภาษาอังกฤษ)</label>
+                            <input type="text" id="drug-name" placeholder="เช่น aspirin">
+                        </div>
+                        <button class="demo-btn" onclick="searchDrug()">
+                            <i class="fas fa-search"></i> ค้นหาข้อมูลยา
+                        </button>
+                        <div id="drug-result" class="demo-result"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- API Resources Section -->
+    <section id="apis" class="apis">
+        <div class="container">
+            <h2 class="section-title">API Resources สำหรับพัฒนา</h2>
+            <p class="section-subtitle">แหล่งข้อมูล API ฟรีสำหรับพัฒนาแอปพลิเคชันทางการแพทย์</p>
+            
+            <div class="api-grid">
+                <!-- Symptom Checker APIs -->
+                <div class="api-card">
+                    <div class="api-header">
+                        <i class="fas fa-stethoscope"></i>
+                        <h3>Symptom Checker APIs</h3>
+                    </div>
+                    <div class="api-list">
+                        <div class="api-item">
+                            <strong>ApiMedic</strong>
+                            <p>API สำหรับตรวจสอบอาการและแนะนำโรค</p>
+                            <a href="https://apimedic.com/" target="_blank">เรียนรู้เพิ่มเติม</a>
+                        </div>
+                        <div class="api-item">
+                            <strong>Infermedica</strong>
+                            <p>AI NLP รองรับ 1,500+ อาการ</p>
+                            <a href="https://developer.infermedica.com/" target="_blank">เรียนรู้เพิ่มเติม</a>
+                        </div>
+                        <div class="api-item">
+                            <strong>EndlessMedical</strong>
+                            <p>AI วินิจฉัยขั้นสูง ฟรี 100%</p>
+                            <a href="https://www.endlessmedical.com/" target="_blank">เรียนรู้เพิ่มเติม</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Drug Information APIs -->
+                <div class="api-card">
+                    <div class="api-header">
+                        <i class="fas fa-pills"></i>
+                        <h3>Drug Information APIs</h3>
+                    </div>
+                    <div class="api-list">
+                        <div class="api-item">
+                            <strong>OpenFDA</strong>
+                            <p>ข้อมูลยาจาก FDA สหรัฐอเมริกา</p>
+                            <a href="https://open.fda.gov/" target="_blank">เรียนรู้เพิ่มเติม</a>
+                        </div>
+                        <div class="api-item">
+                            <strong>RxNorm (NIH)</strong>
+                            <p>ฐานข้อมูลยาจากรัฐบาลสหรัฐ</p>
+                            <a href="https://lhncbc.nlm.nih.gov/RxNav/" target="_blank">เรียนรู้เพิ่มเติม</a>
+                        </div>
+                        <div class="api-item">
+                            <strong>DailyMed</strong>
+                            <p>ฉลากยาอย่างเป็นทางการ</p>
+                            <a href="https://dailymed.nlm.nih.gov/" target="_blank">เรียนรู้เพิ่มเติม</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Healthcare Data APIs -->
+                <div class="api-card">
+                    <div class="api-header">
+                        <i class="fas fa-database"></i>
+                        <h3>Healthcare Data APIs</h3>
+                    </div>
+                    <div class="api-list">
+                        <div class="api-item">
+                            <strong>FHIR APIs</strong>
+                            <p>มาตรฐานแลกเปลี่ยนข้อมูลสุขภาพ</p>
+                            <a href="https://www.hl7.org/fhir/" target="_blank">เรียนรู้เพิ่มเติม</a>
+                        </div>
+                        <div class="api-item">
+                            <strong>CDC APIs</strong>
+                            <p>ข้อมูลสาธารณสุขจาก CDC</p>
+                            <a href="https://www.cdc.gov/data/" target="_blank">เรียนรู้เพิ่มเติม</a>
+                        </div>
+                        <div class="api-item">
+                            <strong>Metriport</strong>
+                            <p>Open Source Healthcare API</p>
+                            <a href="https://www.metriport.com/" target="_blank">เรียนรู้เพิ่มเติม</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Code Examples -->
+            <div class="code-examples">
+                <h3>ตัวอย่างการใช้งาน API</h3>
+                <div class="code-tabs">
+                    <button class="code-tab-btn active" data-code="openfda">OpenFDA</button>
+                    <button class="code-tab-btn" data-code="infermedica">Infermedica</button>
+                    <button class="code-tab-btn" data-code="rxnorm">RxNorm</button>
+                </div>
+                
+                <div id="openfda-code" class="code-content active">
+                    <pre><code>// ค้นหาข้อมูลยาจาก OpenFDA
+async function searchDrug(drugName) {
+    const url = `https://api.fda.gov/drug/label.json?search=openfda.brand_name:${drugName}&limit=1`;
+    
+    try {
+        const response = await fetch(url);
+        const data = await response.json();
+        
+        if (data.results && data.results.length > 0) {
+            const drug = data.results[0];
+            return {
+                brandName: drug.openfda.brand_name?.[0],
+                genericName: drug.openfda.generic_name?.[0],
+                manufacturer: drug.openfda.manufacturer_name?.[0],
+                purpose: drug.purpose?.[0]
+            };
+        }
+    } catch (error) {
+        console.error('Error fetching drug info:', error);
+    }
+}</code></pre>
+                </div>
+                
+                <div id="infermedica-code" class="code-content">
+                    <pre><code>// ตรวจสอบอาการด้วย Infermedica API
+async function checkSymptoms(symptoms, age, sex) {
+    const url = 'https://api.infermedica.com/v3/diagnosis';
+    const headers = {
+        'App-Id': 'YOUR_APP_ID',
+        'App-Key': 'YOUR_APP_KEY',
+        'Content-Type': 'application/json'
+    };
+    
+    const body = {
+        sex: sex,
+        age: { value: age },
+        evidence: symptoms.map(symptom => ({
+            id: symptom.id,
+            choice_id: 'present'
+        }))
+    };
+    
+    try {
+        const response = await fetch(url, {
+            method: 'POST',
+            headers: headers,
+            body: JSON.stringify(body)
+        });
+        return await response.json();
+    } catch (error) {
+        console.error('Error checking symptoms:', error);
+    }
+}</code></pre>
+                </div>
+                
+                <div id="rxnorm-code" class="code-content">
+                    <pre><code>// ค้นหาข้อมูลยาจาก RxNorm
+async function getDrugInfo(drugName) {
+    const searchUrl = `https://rxnav.nlm.nih.gov/REST/drugs.json?name=${drugName}`;
+    
+    try {
+        const response = await fetch(searchUrl);
+        const data = await response.json();
+        
+        if (data.drugGroup && data.drugGroup.conceptGroup) {
+            const concepts = data.drugGroup.conceptGroup
+                .find(group => group.tty === 'SBD')?.conceptProperties;
+                
+            if (concepts && concepts.length > 0) {
+                const rxcui = concepts[0].rxcui;
+                
+                // ดึงข้อมูลเพิ่มเติม
+                const detailUrl = `https://rxnav.nlm.nih.gov/REST/rxcui/${rxcui}/properties.json`;
+                const detailResponse = await fetch(detailUrl);
+                return await detailResponse.json();
+            }
+        }
+    } catch (error) {
+        console.error('Error fetching RxNorm data:', error);
+    }
+}</code></pre>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="education">
+        <div class="container">
+            <h2 class="section-title">การศึกษาและเรียนรู้</h2>
+            <div class="education-grid">
+                <div class="edu-card">
+                    <i class="fas fa-graduation-cap"></i>
+                    <h3>หลักสูตรออนไลน์</h3>
+                    <ul>
+                        <li>AI for Medicine (Coursera)</li>
+                        <li>Medical Informatics (edX)</li>
+                        <li>Digital Health (Khan Academy)</li>
+                    </ul>
+                </div>
+                <div class="edu-card">
+                    <i class="fas fa-book"></i>
+                    <h3>หนังสือแนะนำ</h3>
+                    <ul>
+                        <li>AI in Healthcare</li>
+                        <li>Medical AI Applications</li>
+                        <li>Digital Medicine</li>
+                    </ul>
+                </div>
+                <div class="edu-card">
+                    <i class="fas fa-code"></i>
+                    <h3>เครื่องมือพัฒนา</h3>
+                    <ul>
+                        <li>Python + Scikit-learn</li>
+                        <li>TensorFlow/PyTorch</li>
+                        <li>FHIR Libraries</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Login-Learning</h3>
+                    <p>บริษัทเทคโนโลยีการศึกษา - ทำให้เทคโนโลจีซับซ้อนเข้าถึงได้ผ่านการเรียนรู้แบบอินเตอร์แอกทีฟ</p>
+                </div>
+                <div class="footer-section">
+                    <h4>ลิงก์ที่เป็นประโยชน์</h4>
+                    <ul>
+                        <li><a href="https://www.fda.gov/">FDA</a></li>
+                        <li><a href="https://www.nlm.nih.gov/">NIH/NLM</a></li>
+                        <li><a href="https://www.who.int/">WHO</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>คำเตือน</h4>
+                    <p>ข้อมูลในเว็บไซต์นี้เป็นเพียงตัวอย่างเพื่อการศึกษา ไม่สามารถใช้วินิจฉัยโรคจริงได้</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Login-Learning - AI for Medicine Educational Project</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Demo Modal -->
+    <div id="demo-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <div id="modal-body"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
